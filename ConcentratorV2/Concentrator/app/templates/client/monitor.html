@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head lang="en">
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+   <!--  <meta http-equiv="refresh" content="10"> -->
+    <meta content="utf-8" http-equiv="encoding">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>指令下发</title>
+
+    <link href="../../static/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../../static/bootstrap-3.3.5/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../../static/upload/buttons.css" rel="stylesheet" type="text/css"/>
+    <link href="../../static/upload/default.css" rel="stylesheet" type="text/css"/>
+    <link href="../../static/upload/fileinput.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../../static/tabs/css/demo.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="../../static/bootstrap_select/css/bootstrap-select.css">
+    <link rel="stylesheet" type="text/css" href="../../static/tabs/css/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../static/tabs/css/tabstyles.css" />
+
+    <script src="../../static/tabs/js/modernizr.custom.js"></script>
+<script src="../../static/bootstrap-3.3.5/js/jquery-1.11.3.min.js" type="text/javascript"></script>
+<script src="../../static/bootstrap-3.3.5/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../../static/bootstrap_select/js/bootstrap-select.js"></script>
+<script type="text/javascript">
+function check(object)
+{
+    var value = object.value;
+
+    if(value=="unicast")
+    {
+        document.getElementById('ipselect').style.display="block";
+    }
+    else if (value=="mcast")
+    {
+        document.getElementById('ipselect').style.display="none";
+    }
+}
+</script>
+<script type="text/javascript">
+function check2(object)
+{
+    var value = object.value;
+    if(value=="unicast")
+    {
+        document.getElementById('ipselect2').style.display="block";
+    }
+    else if (value=="mcast")
+    {
+        document.getElementById('ipselect2').style.display="none";
+    }
+}
+</script>
+<script type="text/javascript">
+function check4(object)
+{
+    var value = object.value;
+    if(value=="unicast_ack")
+    {
+        document.getElementById('ipselect4').style.display="block";
+    }
+    else if (value=="mcast_ack")
+    {
+        document.getElementById('ipselect4').style.display="none";
+    }
+}
+</script>
+<script type="text/javascript">
+function del()
+{
+    var msg = "恢复出厂设置:\n请确认！";
+    if (confirm(msg)==true)
+    {
+        var ins_reset=document.getElementById('instruction_reset');
+        ins_reset.submit();
+    }   
+    else
+    {
+        return false;
+    }
+}
+</script>
+<script type="text/javascript">
+function check5(object)
+{
+    var value = object.value;
+    if(value=="unicast_ack")
+    {
+        document.getElementById('ipselect5').style.display="block";
+    }
+    else if (value=="mcast_ack")
+    {
+        document.getElementById('ipselect5').style.display="none";
+    }
+}
+</script>
+<script type="text/javascript">
+function check7(object)
+{
+    var value = object.value;
+    if(value=="unicast_ack")
+    {
+        document.getElementById('ipselect7').style.display="block";
+    }
+    else if (value=="mcast_ack")
+    {
+        document.getElementById('ipselect7').style.display="none";
+    }
+}
+</script>
+<script type="text/javascript">
+function check8(object)
+{
+    var value = object.value;
+    if(value=="unicast_ack")
+    {
+        document.getElementById('ipselect8').style.display="block";
+    }
+    else if (value=="mcast_ack")
+    {
+        document.getElementById('ipselect8').style.display="none";
+    }
+}
+</script>
+<script type="text/javascript">
+function check9(object)
+{
+    var value = object.value;
+    if(value=="unicast_ack")
+    {
+        document.getElementById('ipselect9').style.display="block";
+    }
+    else if (value=="mcast_ack")
+    {
+        document.getElementById('ipselect9').style.display="none";
+    }
+}
+</script>
+<script type="text/javascript">
+function check10(object)
+{
+    var value = object.value;
+    if(value=="unicast_ack")
+    {
+        document.getElementById('ipselect10').style.display="block";
+    }
+    else if (value=="mcast_ack")
+    {
+        document.getElementById('ipselect10').style.display="none";
+    }
+}
+</script>
+<script type="text/javascript">
+function check11(object)
+{
+    var value = object.value;
+    if(value=="unicast")
+    {
+        document.getElementById('ipselect11').style.display="block";
+    }
+    else if (value=="mcast")
+    {
+        document.getElementById('ipselect11').style.display="none";
+    }
+}
+</script>
+<script type="text/javascript">
+function check12(object)
+{
+    var value = object.value;
+    if(value=="unicast")
+    {
+        document.getElementById('ipselect12').style.display="block";
+    }
+    else if (value=="mcast")
+    {
+        document.getElementById('ipselect12').style.display="none";
+    }
+}
+</script>
+<script type="text/javascript">
+function check13(object)
+{
+    var value = object.value;
+    if(value=="unicast")
+    {
+        document.getElementById('ipselect13').style.display="block";
+    }
+    else if (value=="mcast")
+    {
+        document.getElementById('ipselect13').style.display="none";
+    }
+}
+</script>
+
+<script type="text/javascript">
+function check14(object)
+{
+    var value = object.value;
+    if(value=="unicast")
+    {
+        document.getElementById('ipselect14').style.display="block";
+    }
+    else if (value=="mcast")
+    {
+        document.getElementById('ipselect14').style.display="none";
+    }
+}
+</script>
+
+<script type="text/javascript">
+function MyAutoFresh(object)
+{
+    // appdata = DATABASE.my_db_execute(("select Data,NodeID,max(currenttime) from ApplicationData group by NodeID order by currenttime;"),None);
+    // length = len(appdata);
+    // render_template('./client/monitor.html',appdata=appdata,length=length);
+    // setTimeout("window.location.reload()",1000*10);
+    setTimeout("window.location.reload()",1000*20);
+    //setInterval("MyAutoRun()",1000*10);
+}
+</script>
+
+</head>
+
+
+<body>
+    <div class="container">
+        
+        <section>
+            <div class="tabs tabs-style-underline container-fluid">
+                <nav>
+                    <ul>
+                        <li><a href="#section-underline-1"><span>读表指令</span></a></li>
+                        <li><a href="#section-underline-2"><span>指令下发</span></a></li>
+                        <!-- <li><a href="#section-underline-3"><span style="color:#666666">修改网络参数(暂不可用)</span></a></li> -->
+                        <li><a href="#section-underline-4"><span>节点重启</span></a></li>
+                        <li><a href="#section-underline-5"><span>恢复出厂</span></a></li>
+                        <li><a href="#section-underline-6"><span>设定根节点校时周期</span></a></li>
+                        <li><a href="#section-underline-7"><span>唤醒</span></a></li>
+                        <li><a href="#section-underline-8"><span>唤醒查询</span></a></li>
+                        <li><a href="#section-underline-9"><span>调试模式</span></a></li>
+                        <li><a href="#section-underline-10"><span>退出调试模式</span></a></li>
+                      
+                    </ul>
+                     <ul>
+                        <li><a href="#section-underline-11"><span>自动开关阀</span></a></li>
+
+                        <li><a href="#section-underline-12"><span>强制开阀</span></a></li>
+
+                        <li><a href="#section-underline-13"><span>强制关阀</span></a></li>
+
+                        <li><a href="#section-underline-14"><span>查询阀状态</span></a></li>
+                    </ul>
+
+                </nav>
+                <div class="content-wrap">
+                    <section id="section-underline-1">
+                        <form name="instruction_send" id="instruction_send" target="iframe1" method="POST" action='{{url_for('instruction_send')}}'>
+
+
+                       <hr>
+                       <div class="container">  
+                        <input  style="height:41px; font-size:19px" type="text" name="emit_data" placeholder="{{send_data}}"/>
+                        <select style="height:41px; font-size:19px" id="mySelect"   name="mySelect" onclick="check(this)">
+                            <option value="mcast" selected="selected">&nbsp;多&nbsp;播&nbsp;</option>
+                            <option value="unicast" >&nbsp;单&nbsp;播&nbsp;</option>
+                        </select>
+                         <button type="submit" class="btn btn-success" onclick= "MyAutoFresh(this)" style="height:40px; font-size:19px">读表指令</button>
+                        <div id="ipselect" style="display: none">    
+<!--                         <label>节点选择(最多选择5项)</label> -->
+                        <form id="nodeIP" name="nodeIP" class="form-horizontal" role="form" onclick="check(this)" >
+                            <div style="height:120px;width:300px; margin:0 auto;">
+                            <div class="col-lg-10">
+                                <select class="selectpicker show-menu-arrow form-control" multiple data-max-options="5" name="NodeIP">
+                                {% for item in IP_list: %}
+                                    <option>{{item}}</option>
+                                {% endfor %}
+                                </select>
+                                </div>
+                            </div>
+                          </form>
+                        <!-- <form id="nodeIP" name="nodeIP" onclick="check(this)">
+                        {% for item in IP_list: %}
+                            <br> 
+                            <input name="NodeIP" type="checkbox" value={{item}} />{{item}}
+
+                        {% endfor %}
+                        </form> -->
+                        
+                        </div>
+                       </div>
+
+
+                        </form>
+                        <iframe id="iframe1" name="iframe1" style="display:none;"></iframe> 
+
+                    </section>
+                    <section id="section-underline-2">
+                    <form name="instruction_write" method="POST" target="iframe2" action='{{url_for('instruction_write')}}'>
+                       <hr>
+                      
+                        <input  style="height:41px; font-size:19px" type="text" name="write_data" placeholder="{{write_data}}"/>
+
+                        <select style="height:41px; font-size:19px"  id="mySelect2" name="mySelect2" onclick="check2(this)">
+                            <option value="mcast" selected="selected">&nbsp;多&nbsp;播&nbsp;</option>
+                            <option value="unicast" >&nbsp;单&nbsp;播&nbsp;</option>
+                        </select>
+                    <button style="height:40px; font-size:19px" type="submit" class="btn btn-success" onclick= "MyAutoFresh(this)" style="width:107px;height:48px;">指令下发</button>
+
+                        <div  id="ipselect2" style="display: none">    
+                        <label>节点选择:(最多选择5项)</label>
+                        <form id="nodeIP2" name="nodeIP2" class="form-horizontal" role="form" onclick="check(this)">
+                            <div style="height:80px;width:300px; margin:0 auto;">
+                            <div class="col-lg-10">
+                                <select class="selectpicker show-menu-arrow form-control" multiple data-max-options="5" name="NodeIP2">
+                                {% for item in IP_list: %}
+                                    <option>{{item}}</option>
+                                {% endfor %}
+                                </select>
+                                </div>
+                            </div>
+                          </form>
+                        </div>
+                        <br />
+                      
+                        
+
+                        </form>
+                        <iframe id="iframe2" name="iframe2" style="display:none;"></iframe> 
+                    </section>
+                    <!-- <section id="section-underline-3">
+                        <table>
+        
+        
+        <tr>
+            <td>
+                       <hr>
+            
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <form class="form-inline" name="instruction3" target="iframe3" method="POST" action='{{url_for('instruction3')}}'>
+                    <fieldset id="box">
+                        <span>网络参数配置指令下发:（请输入0~255之间的整数）</span>
+                    <hr>
+                        <label> PANID:  </label>
+                        <input type="text" name="PANID" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"
+                        onblur="if(this.value>255){alert('不能大于255！');this.focus();}"
+                        style = "position:relative; left:56px;" placeholder={{display_datadict["PANID"]}}><br />
+                        <label> CCA:    </label>
+                         <input type="text" name="CCA" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"
+                        onblur="if(this.value>255){alert('不能大于255！');this.focus();}"
+                        style = "position:relative; left:68px;" placeholder={{display_datadict["CCA"]}}><br />
+                        <label>发射功率:  </label>
+                        <input type="text" name="emitpower" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"
+                        onblur="if(this.value>255){alert('不能大于255！');this.focus();}"
+                        style = "position:relative; left:44px;" placeholder={{display_datadict["emitpower"]}}><br />
+                        <label>CCA检查周期:</label>
+                        <input type="text" name="CCAcheckingperiod" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"
+                        onblur="if(this.value>255){alert('不能大于255！');this.focus();}"
+                        style = "position:relative; left:18px;" placeholder={{display_datadict["CCAcheckingperiod"]}}><br />
+                        <label>inactive:  </label>
+                        <input type="text" name="inactive" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"
+                        onblur="if(this.value>255){alert('不能大于255！');this.focus();}"
+                        style = "position:relative; left:50px;" placeholder={{display_datadict["inactive"]}}><br />
+                        <label>channel:   </label>
+                        <input type="text" name="channel" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"
+                        onblur="if(this.value>255){alert('不能大于255！');this.focus();}"
+                        style = "position:relative; left:48px;" placeholder={{display_datadict["channel"]}}><br />
+                        <label>DIO_minlen: </label>
+                        <input type="text" name="DIO_minlen" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"
+                        onblur="if(this.value>255){alert('不能大于255！');this.focus();}"
+                        style = "position:relative; left:27px;" placeholder={{display_datadict["DIO_minlen"]}}><br />
+                        <label>DIO_max:    </label>
+                        <input type="text" name="DIO_max" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"
+                        onblur="if(this.value>255){alert('不能大于255！');this.focus();}"
+                        style = "position:relative; left:43px;" placeholder={{display_datadict["DIO_max"]}}><br />
+                    </fieldset> 
+                <input type ="submit" class="btn btn-success" value="提交" />
+                </form>
+                        <iframe id="iframe3" name="iframe3" style="display:none;"></iframe> 
+
+            </div>
+        </div>
+    </div>
+</td>
+        </tr>
+    </table>
+                    </section> -->
+                    <section id="section-underline-4">
+                        <form name="instruction_restart" target="iframe4" method="POST" action='{{url_for('instruction_restart')}}'>
+                       <hr>
+                 
+
+                        <select style="height:41px; font-size:19px" id="mySelect4" name="mySelect4" onclick="check4(this)">
+                            <option value="mcast_ack" selected="selected">&nbsp;多&nbsp;播&nbsp;</option>
+                            <option value="unicast_ack" >&nbsp;单&nbsp;播&nbsp;</option>
+                        </select>
+                     　<button style="height:40px; font-size:19px" type="submit" class="btn btn-success" >重启指令下发
+                     </button>
+                        <div id="ipselect4" style="display: none"> 
+                        <label>节点选择:(最多选择5项)</label>
+                        <form id="nodeIP4" name="nodeIP4" class="form-horizontal" role="form" onclick="check(this)">
+                            <div style="height:120px;width:300px; margin:0 auto;">
+                            <div class="col-lg-10">
+                                <select class="selectpicker show-menu-arrow form-control" multiple data-max-options="5" name="NodeIP4">
+                                {% for item in IP_list: %}
+                                    <option>{{item}}</option>
+                                {% endfor %}
+                                </select>
+                                </div>
+                            </div>
+                          </form>
+                        </div>
+                        </form>
+                        <iframe id="iframe4" name="iframe4" style="display:none;"></iframe> 
+
+                    </section>
+                    <section id="section-underline-5">
+                    <form name="instruction_reset" target="iframe5" id="instruction_reset" method="POST" action='{{url_for('instruction_reset')}}'>
+                      
+                       <hr>
+
+                        <select style="height:41px; font-size:19px" id="mySelect5" name="mySelect5" onclick="check5(this)">
+                            <option value="mcast_ack" selected="selected">&nbsp;多&nbsp;播&nbsp;</option>
+                            <option value="unicast_ack" >&nbsp;单&nbsp;播&nbsp;</option>
+                        </select>
+                  　 　
+                        <button style="height:40px; font-size:19px" type="button" class="btn btn-success" onclick="del()" 　>恢复出厂设置</button>
+
+                        <div id="ipselect5" style="display: none">    
+                        <label>节点选择:(最多选择5项)</label>
+                        <form id="nodeIP5" name="nodeIP5" class="form-horizontal" role="form" onclick="check(this)">
+                            <div style="height:120px;width:300px; margin:0 auto;">
+                            <div class="col-lg-10">
+                                <select class="selectpicker show-menu-arrow form-control" multiple data-max-options="5" name="NodeIP5">
+                                {% for item in IP_list: %}
+                                    <option>{{item}}</option>
+                                {% endfor %}
+                                </select>
+                                </div>
+                            </div>
+                          </form>
+                        </select>
+                        </div>
+                     
+                       
+
+                        </form>
+                        <iframe id="iframe5" name="iframe5" style="display:none;"></iframe> 
+
+                    </section>
+                    <section id="section-underline-6">
+                    <form name="instruction_adjtime" target="iframe6" method="POST" action='{{url_for('instruction_adjtime')}}'>
+                       <hr>
+                 
+                        <input type="text" name="timeperiod" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" onblur="if(this.value>9999){alert('校时周期过长！');this.focus();}"
+                         placeholder={{adjtime_data}}>
+
+                        <button style="width:60px　height:40px; font-size:19px" type="submit" class="btn btn-success" 　>设定根节点校时周期</button>
+                        
+
+                        </form>
+                        <iframe id="iframe6" name="iframe6" style="display:none;"></iframe> 
+
+                    </section>
+
+                    <section id="section-underline-7">
+                        <form name="instruction_WakeUp" target="iframe7" method="POST" action='{{url_for('instruction_WakeUp')}}'>
+                       <hr>
+                 
+
+                        <select style="height:41px; font-size:19px" id="mySelect7" name="mySelect7" onclick="check7(this)">
+                            <option value="mcast_ack" selected="selected">&nbsp;多&nbsp;播&nbsp;</option>
+                            <option value="unicast_ack" >&nbsp;单&nbsp;播&nbsp;</option>
+                        </select>
+                     　<button style="height:40px; font-size:19px" type="submit" class="btn btn-success">唤醒指令下发
+                     </button>
+                        <div id="ipselect7" style="display: none"> 
+                        <label>节点选择:(最多选择5项)</label>
+                        <form id="nodeIP7" name="nodeIP7" class="form-horizontal" role="form" onclick="check(this)">
+                            <div style="height:120px;width:300px; margin:0 auto;">
+                            <div class="col-lg-10">
+                                <select class="selectpicker show-menu-arrow form-control" multiple data-max-options="5" name="NodeIP7">
+                                {% for item in IP_list: %}
+                                    <option>{{item}}</option>
+                                {% endfor %}
+                                </select>
+                                </div>
+                            </div>
+                          </form>
+                        </div>
+                        </form>
+                        <iframe id="iframe7" name="iframe7" style="display:none;"></iframe> 
+                    </section>
+
+                    <section id="section-underline-8">
+                        <form name="instruction_QueryWakeUp" target="iframe8" method="POST" action='{{url_for('instruction_QueryWakeUp')}}'>
+                       <hr>
+                 
+
+                        <select style="height:41px; font-size:19px" id="mySelect8" name="mySelect8" onclick="check8(this)">
+                            <option value="mcast_ack" selected="selected">&nbsp;多&nbsp;播&nbsp;</option>
+                            <option value="unicast_ack" >&nbsp;单&nbsp;播&nbsp;</option>
+                        </select>
+                     　<button style="height:40px; font-size:19px" type="submit" class="btn btn-success">唤醒查询指令下发
+                     </button>
+                        <div id="ipselect8" style="display: none"> 
+                        <label>节点选择:(最多选择5项)</label>
+                        <form id="nodeIP8" name="nodeIP8" class="form-horizontal" role="form" onclick="check(this)">
+                            <div style="height:120px;width:300px; margin:0 auto;">
+                            <div class="col-lg-10">
+                                <select class="selectpicker show-menu-arrow form-control" multiple data-max-options="5" name="NodeIP8">
+                                {% for item in IP_list: %}
+                                    <option>{{item}}</option>
+                                {% endfor %}
+                                </select>
+                                </div>
+                            </div>
+                          </form>
+                        </div>
+                        </form>
+                        <iframe id="iframe8" name="iframe8" style="display:none;"></iframe> 
+                    </section>
+
+                    <section id="section-underline-9">
+                        <form name="debug_mode" target="iframe9" method="POST" action='{{url_for('debug_mode')}}'>
+                       <hr>
+                 
+
+                        <select style="height:41px; font-size:19px" id="mySelect9" name="mySelect9" onclick="check9(this)">
+                            <option value="mcast_ack" selected="selected">&nbsp;多&nbsp;播&nbsp;</option>
+                            <option value="unicast_ack" >&nbsp;单&nbsp;播&nbsp;</option>
+                        </select>
+                     　<button  onclick="alert('调试指令已下发，请等待{{sfaf}}再下发其他指令！')" style="height:40px; font-size:19px" type="submit" class="btn btn-success">调试模式
+                     </button>
+                     <div>调试指令将于{{now_hour}}点{{wait_time}}分开始的十分钟内生效，在此之前不要下发其他指令</div>
+                        <div id="ipselect9" style="display: none"> 
+                        <label>节点选择:(最多选择5项)</label>
+                        <form id="nodeIP9" name="nodeIP9" class="form-horizontal" role="form" onclick="check(this)">
+                            <div style="height:120px;width:300px; margin:0 auto;">
+                            <div class="col-lg-10">
+                                <select class="selectpicker show-menu-arrow form-control" multiple data-max-options="5" name="NodeIP9">
+                                {% for item in IP_list: %}
+                                    <option>{{item}}</option>
+                                {% endfor %}
+                                </select>
+                                </div>
+                            </div>
+                          </form>
+                        </div>
+                        </form>
+                        <iframe id="iframe9" name="iframe9" style="display:none;"></iframe> 
+                    </section>
+
+                    <section id="section-underline-10">
+                        <form name="quit_debug_mode" target="iframe10" method="POST" action='{{url_for('quit_debug_mode')}}'>
+                       <hr>
+                 
+
+                        <select style="height:41px; font-size:19px" id="mySelect10" name="mySelect10" onclick="check10(this)">
+                            <option value="mcast_ack" selected="selected">&nbsp;多&nbsp;播&nbsp;</option>
+                            <option value="unicast_ack" >&nbsp;单&nbsp;播&nbsp;</option>
+                        </select>
+                     　<button style="height:40px; font-size:19px" type="submit" class="btn btn-success">退出调试模式
+                     </button>
+                        <div id="ipselect10" style="display: none"> 
+                        <label>节点选择:(最多选择5项)</label>
+                        <form id="nodeIP10" name="nodeIP10" class="form-horizontal" role="form" onclick="check(this)">
+                            <div style="height:120px;width:300px; margin:0 auto;">
+                            <div class="col-lg-10">
+                                <select class="selectpicker show-menu-arrow form-control" multiple data-max-options="5" name="NodeIP10">
+                                {% for item in IP_list: %}
+                                    <option>{{item}}</option>
+                                {% endfor %}
+                                </select>
+                                </div>
+                            </div>
+                          </form>
+                        </div>
+                        </form>
+                        <iframe id="iframe10" name="iframe10" style="display:none;"></iframe> 
+                    </section>
+
+                    <section id="section-underline-11">
+                        <form name="auto_on_off_valve" method="POST" target="iframe11" action='{{url_for('auto_on_off_valve')}}'>
+                       <hr>
+
+                       <div class="container">  
+                        <input  style="height:41px; font-size:19px" type="text" name="auto_on_off_valve" placeholder="{{auto_on_off_valve}}"/>
+                 
+
+                        <select style="height:41px; font-size:19px" id="mySelect11" name="mySelect11" onclick="check11(this)">
+                            <option value="mcast" selected="selected">&nbsp;多&nbsp;播&nbsp;</option>
+                            <option value="unicast" >&nbsp;单&nbsp;播&nbsp;</option>
+                        </select>
+                     　<button style="height:40px; font-size:19px" type="submit" class="btn btn-success" onclick= "MyAutoFresh(this)">自动开关阀
+                     </button>
+                        <div id="ipselect11" style="display: none"> 
+                        <label>节点选择:(最多选择5项)</label>
+                        <form id="nodeIP11" name="nodeIP11" class="form-horizontal" role="form" onclick="check(this)">
+                            <div style="height:80px;width:300px; margin:0 auto;">
+                            <div class="col-lg-10">
+                                <select class="selectpicker show-menu-arrow form-control" multiple data-max-options="5" name="NodeIP11">
+                                {% for item in IP_list: %}
+                                    <option>{{item}}</option>
+                                {% endfor %}
+                                </select>
+                                </div>
+                            </div>
+                          </form>
+                        </div>
+                        </div>
+                        <br />
+                        </form>
+                        <iframe id="iframe11" name="iframe11" style="display:none;"></iframe> 
+                    </section>
+
+
+                    <section id="section-underline-12">
+                        <form name="force_open_valve" target="iframe12" method="POST" action='{{url_for('force_open_valve')}}'>
+                       <hr>
+                        <input  style="height:41px; font-size:19px" type="text" name="force_open_valve" placeholder="{{force_open_valve}}"/>
+                 
+
+                        <select style="height:41px; font-size:19px" id="mySelect12" name="mySelect12" onclick="check12(this)">
+                            <option value="mcast" selected="selected">&nbsp;多&nbsp;播&nbsp;</option>
+                            <option value="unicast" >&nbsp;单&nbsp;播&nbsp;</option>
+                        </select>
+                     　<button style="height:40px; font-size:19px" type="submit" class="btn btn-success" onclick= "MyAutoFresh(this)">强制开阀
+                     </button>
+                        <div id="ipselect12" style="display: none"> 
+                        <label>节点选择:(最多选择5项)</label>
+                        <form id="nodeIP12" name="nodeIP12" class="form-horizontal" role="form" onclick="check(this)">
+                            <div style="height:80px;width:300px; margin:0 auto;">
+                            <div class="col-lg-10">
+                                <select class="selectpicker show-menu-arrow form-control" multiple data-max-options="5" name="NodeIP12">
+                                {% for item in IP_list: %}
+                                    <option>{{item}}</option>
+                                {% endfor %}
+                                </select>
+                                </div>
+                            </div>
+                          </form>
+                        </div>
+                        <br />
+
+                        </form>
+                        <iframe id="iframe12" name="iframe12" style="display:none;"></iframe> 
+                    </section>
+                    
+                    <section id="section-underline-13">
+                        <form name="force_close_valve" target="iframe13" method="POST" action='{{url_for('force_close_valve')}}'>
+                       <hr>
+                        <input  style="height:41px; font-size:19px" type="text" name="force_close_valve" placeholder="{{force_close_valve}}"/>                 
+
+                        <select style="height:41px; font-size:19px" id="mySelect13" name="mySelect13" onclick="check13(this)">
+                            <option value="mcast" selected="selected">&nbsp;多&nbsp;播&nbsp;</option>
+                            <option value="unicast" >&nbsp;单&nbsp;播&nbsp;</option>
+                        </select>
+                     　<button style="height:40px; font-size:19px" type="submit" class="btn btn-success" onclick= "MyAutoFresh(this)">强制关阀
+                     </button>
+                        <div id="ipselect13" style="display: none"> 
+                        <label>节点选择:(最多选择5项)</label>
+                        <form id="nodeIP13" name="nodeIP13" class="form-horizontal" role="form" onclick="check(this)">
+                            <div style="height:80px;width:300px; margin:0 auto;">
+                            <div class="col-lg-10">
+                                <select class="selectpicker show-menu-arrow form-control" multiple data-max-options="5" name="NodeIP13">
+                                {% for item in IP_list: %}
+                                    <option>{{item}}</option>
+                                {% endfor %}
+                                </select>
+                                </div>
+                            </div>
+                          </form>
+                        </div>
+                        <br />
+                        </form>
+                        <iframe id="iframe13" name="iframe13" style="display:none;"></iframe> 
+                    </section>
+
+                      <section id="section-underline-14">
+                        <form name="query_valve_status" target="iframe14" method="POST" action='{{url_for('query_valve_status')}}'>
+                       <hr>
+                        <input  style="height:41px; font-size:19px" type="text" name="query_valve_status" placeholder="{{query_valve_status}}"/>                 
+
+                        <select style="height:41px; font-size:19px" id="mySelect14" name="mySelect14" onclick="check14(this)">
+                            <option value="mcast" selected="selected">&nbsp;多&nbsp;播&nbsp;</option>
+                            <option value="unicast" >&nbsp;单&nbsp;播&nbsp;</option>
+                        </select>
+                     　<button style="height:41px; font-size:19px" type="submit" class="btn btn-success" onclick= "MyAutoFresh(this)">查询阀状态
+                     </button>
+                        <div id="ipselect14" style="display: none"> 
+                        <label>节点选择:(最多选择5项)</label>
+                        <form id="nodeIP14" name="nodeIP14" class="form-horizontal" role="form" onclick="check(this)">
+                            <div style="height:80px;width:300px; margin:0 auto;">
+                            <div class="col-lg-10">
+                                <select class="selectpicker show-menu-arrow form-control" multiple data-max-options="5" name="NodeIP14">
+                                {% for item in IP_list: %}
+                                    <option>{{item}}</option>
+                                {% endfor %}
+                                </select>
+                                </div>
+                            </div>
+                          </form>
+                        </div>
+                        <br />
+                        </form>
+                        <iframe id="iframe14" name="iframe14" style="display:none;"></iframe> 
+                    </section>
+
+
+                </div>
+            </div>
+        </section>
+
+    <table class="table table-hover table-responsive  table-condensed table-striped">
+      <thead>
+        <tr>
+            <th class="text-center">序号</th>
+            <th class="text-center">节点ID</th>
+            <th class="text-center">时间</th>
+            <th class="text-center">表号</th>
+            <th class="text-center">阀状态</th>
+            <th class="text-center">厂商</th>
+            <th class="text-center">正向流量</th>
+            <th class="text-center">反向流量</th>
+           <!--  <th class="text-center">应用数据</th> -->
+        </tr>
+      </thead>
+      <tbody>
+
+
+      {% for i in range(length): %}
+
+
+      <tr data-toggle="modal" data-target="#myModal">
+      <th scope="row" class="text-center" id="id">{{i+1}}</th>
+          <td class="text-nowrap text-center">{{ appdata[i][0] }}</td>
+          <td class="text-center text-nowrap">{{ appdata[i][1] }}</td>
+          <td class="text-center text-nowrap">{{ meter_data_arr[i][0] }}</td>
+          <td class="text-center text-nowrap">{{ valve_status_arr[i] }}</td>
+          <td class="text-center text-nowrap">{{ meter_data_arr[i][1] }}</td>
+          <td class="text-center text-nowrap">{{ meter_data_arr[i][2] }}</td>
+          <td class="text-center text-nowrap">{{ meter_data_arr[i][3] }}</td>
+          <!-- <td class="text-center" id="current">{{ appdata[i][2] }}</td> -->
+        </tr>
+
+      {% endfor %}
+      </tbody>
+    </table>          
+
+
+
+        </div><!-- /container -->
+        <script src="../../static/tabs/js/cbpFWTabs.js"></script>
+        <script>
+            (function() {
+                [].slice.call( document.querySelectorAll( '.tabs' ) ).forEach( function( el ) {
+                    new CBPFWTabs( el );
+                });
+            })();
+        </script>
+
+
+    <br>
+
+
+</body>
+
+</html>

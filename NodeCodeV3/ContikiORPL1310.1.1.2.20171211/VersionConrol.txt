@@ -1,0 +1,52 @@
+1.	0contiki-orpl-1310-newinc(能耗测量UdpBug版)
+本版本从1120移植而来，改动较大，需要注意的有以下几点函数改动
+
+static void request_send(void);->    static void request_send(void *p);
+
+void update_schedule(uint8_t bitmap[]) ->void update_schedule(void *p)
+   
+temp_votlage = (uint32_t)get_voltage();?why 32
+
+// if(!we_are_receiving_burst) { by huang xiaobing
+//   off();
+// }
+
+2.	1contiki-orpl-1310-newinc-Basic(基础移植UdpBug版)
+本版本将除了RNFD，ENERGY-EFFICIENCY，WAKEUP-NODE以外的功能移植过来
+
+3.	2contiki-orpl-1310-newinc-Basic(全移植UdpBug版)
+本版本将RNFD，ENERGY-EFFICIENCY，WAKEUP-NODE功能移植过来
+
+4.	2contiki-orpl-1310-newinc-Basic(全移植UdpBug版)_10.22_SynPass_bak
+本版本测试通过除了RNFD，ENERGY-EFFICIENCY，WAKEUP-NODE以外的功能
+
+5.	2contiki-orpl-1310-newinc-Basic(全移植UdpBug版)_10.26_bak
+本版本测试通过WAKEUP-NODE，但是RNFD功能没有log日志检查，只是节点行为判定正确
+
+6.	2contiki-orpl-1310-newinc-Basic(全移植UdpBug版)_10.27_NewBoard_bak
+这是将1310改动到新版本节点上后的备份，改动主要包括以下几点：
+	1	串口相关改动
+	2	读表相关配置（主要由宏 HEAT_METER实现)
+	3	灯只留下了RED，同时其他灯都定义为了RED灯
+	4	逻辑分析仪的测试函数改为了logic_test（）
+	5	外部看门狗相关配置（主要由宏 EXTER_WATCHDOG实现）
+	6	发送功率由13.9dbm改为了15dbm
+
+7.	2contiki-orpl-1310-newinc-Basic(全移植UdpBug版)_10.31_AllFunc_bak
+这是将1310包括基本时钟同步，定时上报，修改调度及同步，RNFD（小规模），WAKE-UP（小规模），ENERGY-EFFICIENCY（小规模）用6个节点测试通过后的版本;
+
+8.	2contiki-orpl-1310-newinc-Basic(全移植UdpBug版)_11.28_AddExtraFunc_bak
+这是将1310加入连续Active周期，自适应阈值，1310电流计算，以及nodefunction后小规模（2个节点）测试通过的版本
+
+9..	2contiki-orpl-1310-newinc-Basic(全移植UdpBug版)_12.5_AddExtraFunc_bak
+这是	版本8上基础上，并且加入了低时延以及单点控制，在31个节点上测试通过的版本（RNFD恢复有些问题见相关实验记录：1310集成测试-12.2所有功能测试）
+
+10.
+自适应阈值将0.1改为了1/10,并且注释掉 define NULL,
+(注意刷完节点必须要拔掉，分、否则JTAG会带来月500μA左右的功耗)
+
+11.
+此版本加上了节点超时自动反馈假数据，不用区分真假读表节点；
+修复了Contikimacfcf中唤醒前低时延也可工作的bug；
+加入了RNFD以后恢复时重新请求调度以及时间同步；
+加入了中继节点宏，中继节点具有不同的CCA阈值；

@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+
+	<meta charset="utf-8" />
+
+	<title>HIT_Concenter</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta content="" name="description" />
+
+	<meta content="" name="author" />
+
+
+	<link href="../../static/media/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
+	<link href="../../static/media/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
+
+	<link href="../../static/media/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+	<link href="../../static/media/css/style-metro.css" rel="stylesheet" type="text/css"/>
+
+	<link href="../../static/media/css/style.css" rel="stylesheet" type="text/css"/>
+
+	<link href="../../static/media/css/style-responsive.css" rel="stylesheet" type="text/css"/>
+
+	<link href="../../static/media/css/default.css" rel="stylesheet" type="text/css" id="style_color"/>
+
+	<link href="../../static/media/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+
+	<link href="../../static/media/css/daterangepicker.css" rel="stylesheet" type="text/css" />
+
+	<link href="../../static/media/css/fullcalendar.css" rel="stylesheet" type="text/css"/>
+
+	<link href="../../static/media/css/jqvmap.css" rel="stylesheet" type="text/css" media="screen"/>
+
+	<link rel="shortcut icon" href="../../static/media/image/favicon.ico" />
+
+	<style>
+		.main-content {
+    margin-top: 0;
+    min-height: 850px;
+    width: 99.7%;
+}
+	</style>
+
+
+
+</head>
+
+
+<body class="page-header-fixed">
+
+	<!-- BEGIN HEADER -->
+
+ 
+   
+	<div class="header navbar navbar-inverse navbar-fixed-top">
+
+		<!-- BEGIN TOP NAVIGATION BAR -->
+
+		<div class="navbar-inner">
+
+			<div class="container-fluid">
+
+				<!-- BEGIN LOGO -->
+   
+
+
+				<a class="brand" href="{{url_for('index')}}" style="font-size:39px;margin-top: 10px;padding-left: 20px;">
+
+				   PlouMeter_Concentrator
+
+				</a>
+
+
+				<a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+
+				   <img src="../../static/media/image/menu-toggler.png" alt="" />
+
+				</a>
+			</div>
+		</div>
+ 
+		<!-- END TOP NAVIGATION BAR -->
+	</div>
+ 
+	<!-- BEGIN CONTAINER -->
+	<div class="page-container">
+
+		<div class="page-sidebar nav-collapse collapse">
+      
+			<!-- BEGIN SIDEBAR MENU -->        
+
+			<ul class="page-sidebar-menu">
+
+				<li>
+
+					<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+
+					<div class="sidebar-toggler hidden-phone"></div>
+
+					<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+
+				</li>
+
+				<li>
+
+					<br/>
+
+				</li>
+
+				<li class="start active ">
+
+					<a href="{{url_for('upload')}}"  target="main-content">
+
+					<i class="icon-home"></i> 
+
+					<span class="title">首页</span>
+
+					<span class="selected"></span>
+
+					</a>
+
+				</li>
+				<li class="">
+
+					<a href="{{ url_for('deploy_info') }}"  target="main-content">
+
+					<i class="icon-align-left"></i> 
+
+					<span class="title">部署信息</span>
+
+					<span class=""></span>
+
+					</a>
+
+				</li>
+
+				<li class="">
+
+					<a href="javascript:;">
+
+					<i class="icon-wrench"></i>
+
+					<span class="title">子网控制</span>
+
+					<span class="arrow "></span>
+
+					</a>
+
+					<ul class="sub-menu">
+
+						<li >
+							<a href="{{ url_for('monitor') }}"  target="main-content">
+							  指令下发
+							</a>
+						</li>
+						<li >
+							<a href="{{ url_for('sendmonitor') }}"  target="main-content">
+							  上报监测控制
+							</a>
+						</li>
+						<li >
+							<a href="{{ url_for('scheduling') }}" target="main-content">
+							  节点同步信息设置
+							</a>
+						</li>
+
+					</ul>
+
+				</li>
+
+				<li class="">
+
+					<a href="javascript:;">
+
+					<i class="icon-bar-chart"></i>
+
+					<span class="title">网络监测</span>
+
+					<span class="arrow "></span>
+
+					</a>
+
+					<ul class="sub-menu">
+
+						<li >
+							<a href="{{ url_for('protoanalyzer') }}"  target="main-content">
+							  拓扑数量分析
+							</a>
+						</li>
+                        <li >
+							<a href="{{ url_for('flowanalyzer') }}"  target="main-content">
+							  拓扑流量分析
+							</a>
+						</li>
+						<li >
+							<a href="{{ url_for('rtmetricdisplay') }}"  target="main-content">
+							  路由度量展示
+							</a>
+						</li>
+						<li >
+							<a href="{{ url_for('energydisplay') }}"  target="main-content">
+							  节点能耗展示
+							</a>
+						</li>
+						<li >
+							<a href="{{ url_for('syntime') }}"  target="main-content">
+							  时间同步展示
+							</a>
+						</li>
+						<li >
+							<a href="{{ url_for('voltagedisplay') }}"  target="main-content">
+							  采样电压展示
+							</a>
+						</li>
+						<li >
+							<a href="{{ url_for('nbdisplay') }}"  target="main-content">
+							  节点邻居数展示
+							</a>
+						</li>
+						<li >
+							<a href="{{ url_for('beacondisplay') }}"  target="main-content">
+							  信标间隔展示
+							</a>
+						</li>
+						<li >
+							<a href="{{ url_for('currentdisplay') }}"  target="main-content">
+							  节点平均电流展示
+							</a>
+						</li>
+						<li >
+							<a href="{{ url_for('restartdisplay') }}"  target="main-content">
+							  重启情况展示
+							</a>
+						</li>
+                        <li >
+							<a href="{{ url_for('topodisplay') }}"  target="main-content">
+							  拓扑展示
+							</a>
+						</li>
+						<li >
+							<a href="{{ url_for('topo_time') }}"  target="main-content">
+							  随时间变化情况
+							</a>
+						</li>
+					    
+					</ul>
+
+				</li>
+
+				<li class="">
+
+					<a href="javascript:;">
+
+					<i class="icon-eye-open"></i>
+
+					<span class="title">应用数据分析</span>
+
+					<span class="arrow "></span>
+
+					</a>
+
+					<ul class="sub-menu">
+
+						<li>
+							<a href="{{ url_for('count_appdata') }}"  target="main-content">
+							  上报数量分析
+							</a>
+						</li>
+						<li >
+							<a href="{{ url_for('appflowanalyzer') }}"  target="main-content">
+							  应用数据流量分析
+							</a>
+						</li>
+						<li>
+							<a href="{{ url_for('app_time') }}"  target="main-content">
+							  随时间变化情况
+							</a>
+						</li>
+
+					</ul>
+
+				</li>
+
+				<li class="">
+
+					<a href="javascript:;">
+
+					<i class="icon-search"></i>
+
+					<span class="title">节点信息查询</span>
+
+					<span class=""></span>
+
+					<span class="arrow "></span>
+
+					</a>
+					
+					<ul class="sub-menu">
+
+						<li >
+
+							<a href="{{ url_for('node_search') }}"  target="main-content">
+							   运行基本参数
+							</a>
+						</li>
+						<li >
+
+							<a href="{{ url_for('network_data') }}" target="main-content">
+							   网络数据
+							</a>
+						</li>
+						<li >
+
+							<a href="{{ url_for('app_data') }}" target="main-content">
+							   应用数据
+							</a>
+						</li>
+						<li >
+							<a href="{{ url_for('netcountdisplay') }}"  target="main-content">
+							  网络数据变化
+							</a>
+						</li>
+						<li >
+							<a href="{{ url_for('appdataanalyzer') }}"  target="main-content">
+							  应用数据变化
+							</a>
+						</li>
+						<li >
+							<a href="{{ url_for('syntimediffdisplay') }}"  target="main-content">
+							  同步时差变化
+							</a>
+						</li>
+						
+						<li >
+							<a href="{{ url_for('node_report_query') }}"  target="main-content">
+							  节点上报查询
+							</a>
+						</li>
+
+						<li >
+							<a href="{{ url_for('deploysearch') }}"  target="main-content">
+							  部署信息查询
+							</a>
+						</li>
+
+
+					</ul>
+				</li>
+
+				<li class="">
+
+					<a href="javascript:;">
+
+					<i class="icon-warning-sign"></i>
+
+					<span class="title">异常信息提示</span>
+
+					<span class="arrow "></span>
+
+					</a>
+
+					<ul class="sub-menu">
+
+						<li >
+							<a href="{{ url_for('exceptinfo') }}" target="main-content">
+							   异常警告
+							</a>
+						</li>
+						<li >
+							<a href="{{ url_for('synerror') }}" target="main-content">
+							   时间同步异常信息
+							</a>
+						</li>
+
+					</ul>
+
+				</li>
+ 				<li class=""> 
+ 
+ 					<a href="javascript:;"> 
+ 
+ 					<i class="icon-cogs"></i>  
+ 
+ 					<span class="title">系统工具</span> 
+ 
+ 					<span class="arrow "></span> 
+ 
+ 					</a> 
+ 
+					<ul class="sub-menu"> 
+ 						<li > 
+ 
+ 							<a href="{{ url_for('supervisor') }}" target="main-content"> 
+                                进程监控
+ 							</a> 
+ 
+ 						</li> 
+<!-- 
+ 						<li > 
+ 
+ 							<a href="{{ url_for('nettools') }}" target="main-content"> 
+                                网络工具 
+ 							</a> 
+ 
+ 						</li> 
+
+ 						<li>
+ 								<a href="{{ url_for('protohelp') }}" target="main-content"> 
+ 							   协议说明 
+ 							</a> 
+ 						</li> -->
+ 						<li>
+ 								<a href="{{ url_for('tailflogback') }}" target="main-content"> 
+ 							   集中器后台日志
+ 							</a> 
+ 						</li>
+ 						<li>
+ 								<a href="{{ url_for('tailflogtunslip') }}" target="main-content"> 
+ 							   Tunslip日志管理 
+ 							</a> 
+ 						</li>
+						<li>
+ 								<a href="{{ url_for('terminaltool') }}" target="main-content"> 
+ 							   命令行工具 
+ 							</a> 
+ 						</li>
+ 
+ 					</ul> 
+ 
+ 				</li> 
+
+
+ 				<li class=""> 
+ 
+  					<a href="{{url_for('about')}}" target="main-content"> 
+				       <i class=" icon-leaf"></i>
+ 						<span class="title">关于系统</span> 
+ 					<!-- <span class="arrow "></span>  -->
+				   </a>
+ 
+ 				</li> 
+
+ 				<li class=""> 
+ 
+ 				    <a  href="{{url_for('logout')}}" >
+				       <i class=" icon-share-alt"></i>
+ 						<span class="title">退出登录</span> 
+ 					<!-- <span class="arrow "></span>  -->
+				   </a>
+ 
+ 				</li> 
+ 	 
+
+			</ul>
+
+			<!-- END SIDEBAR MENU -->
+
+		</div>
+
+		<div class="page-content" id="div-content">
+		  
+			<iframe class="main-content" src="{{url_for('upload')}}" name="main-content" scrolling="auto"></iframe>
+		</div>
+		<!-- END PAGE -->
+ 
+	</div>
+	<div class="footer">
+
+		<div class="footer-inner">
+
+			版权所有  侵权必究 © 2016 Harbin Institute of technology . Cyber Physical System Group.
+
+		</div>
+
+
+
+	</div>
+	<script src="../../static/media/js/jquery-1.10.1.min.js" type="text/javascript"></script>
+
+	<script src="../../static/media/js/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+
+	<script src="../../static/media/js/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+
+	<script src="../../static/media/js/bootstrap.min.js" type="text/javascript"></script>
+
+
+	<script src="../../static/media/js/jquery.slimscroll.min.js" type="text/javascript"></script>
+
+	<script src="../../static/media/js/jquery.blockui.min.js" type="text/javascript"></script>
+
+	<script src="../../static/media/js/jquery.cookie.min.js" type="text/javascript"></script>
+
+	<script src="../../static/media/js/jquery.uniform.min.js" type="text/javascript" ></script>
+
+	<script src="../../static/media/js/app.js" type="text/javascript"></script>
+
+	<script src="../../static/media/js/index.js" type="text/javascript"></script>
+
+	<!-- END PAGE LEVEL SCRIPTS -->  
+
+	<script>
+
+		jQuery(document).ready(function() {    
+
+		   App.init(); // initlayout and core plugins
+		});
+
+	</script>
+
+  </body>
+
+</html>

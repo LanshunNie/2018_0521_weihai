@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>webssh</title>
+    <link rel='shortcut icon' type='image/x-icon' href='../../static/systemctrl/image/favicon.ico'/>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    <link href="../../static/systemctrl/css/tooltip.css" rel="stylesheet" type="text/css"/>
+    <link href="../../static/systemctrl/css/main.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="main" align="center">
+            <form enctype="multipart/form-data" method="POST" action="{{url_for('webdata')}}">
+
+                <input id="host" name="host" type="text" placeholder="Host">
+                <input id="port" name="port" type="text" placeholder="Port">
+                <input id="username" name="username" type="text" placeholder="Username">
+                <input id="password" name="password" type="password" placeholder="Password">
+            <br>
+            <br>
+            <button type="submit" class="pure-button pure-button-primary" >Connect</button>
+    </form>
+</div>
+<div id="term" align="center"></div>
+<script src="http://cdn.bootcss.com/jquery/2.1.2/jquery.min.js"></script>
+<script src="../../static/media/js/term.js"></script>
+<script src="../../static/systemctrl/js/ws.js"></script>
+<script src="../../static/systemctrl/js/formvalid.js"></script>
+<script src="../../static/systemctrl/js/main.js"></script>
+<script type="application/javascript">
+//     $(function () {
+//         $("#form").valid([
+//             {name: "host", type: "ip"},
+//             {name: "port", type: "port"},
+//             {name: "username", type: "username"},
+//             {name: "password", type: "password"},
+//         ]);
+//     })
+</script>
+</body>
+</html>

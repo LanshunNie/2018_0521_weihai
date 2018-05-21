@@ -1,0 +1,11 @@
+#if ROOTNODE_CORRECTTIME_TIMEOUT_REBOOT
+
+static void request_send(void);->    static void request_send(void *p);
+
+ void update_schedule(uint8_t bitmap[]) ->void update_schedule(void *p)
+
+   temp_votlage = (uint32_t)get_voltage();?why 32
+
+  // if(!we_are_receiving_burst) { by huang xiaobing
+  //   off();
+  // }

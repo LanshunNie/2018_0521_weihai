@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>网络数据</title>
+
+    <link href="../../static/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../../static/bootstrap-3.3.5/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../../static/upload/buttons.css" rel="stylesheet" type="text/css"/>
+    <link href="../../static/upload/default.css" rel="stylesheet" type="text/css"/>
+    <link href="../../static/upload/fileinput.min.css" rel="stylesheet" type="text/css"/>
+    
+    <link rel="stylesheet" type="text/css" media="all" href="../../static/daterangepicker/daterangepicker-bs3.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="../../static/daterangepicker/daterangepicker-1.3.7.css" />
+    <link href="../../static/daterangepicker/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="../../static/bootstrap-3.3.5/js/jquery-1.11.3.min.js" type="text/javascript"></script>
+<script src="../../static/jquery-ui-bootstrap/assets/js/jquery-ui-1.10.0.custom.min.js" type="text/javascript"></script>
+<script src="../../static/bootstrap-3.3.5/js/bootstrap.min.js" type="text/javascript"></script>
+<!-- <script src="../../static/bootstrap-3.3.5/js/fileinput.min.js" type="text/javascript"></script> -->
+<!-- <script src="../../static/upload/fileinput_locale_zh.js" type="text/javascript"></script> -->
+
+    <script type="text/javascript" src="../../static/daterangepicker/moment.js"></script>
+    <script type="text/javascript" src="../../static/daterangepicker/daterangepicker-1.3.7.js"></script>
+    
+    <style type="text/css">
+      .demo { position: relative; }
+      .demo i {
+        position: absolute; bottom: 10px; right: 24px; top: auto; cursor: pointer;
+      }
+    </style>
+
+<script type="text/javascript">
+        $(document).ready(function (){
+                    // 时间插件
+                    $('#reportrange span').html(moment().subtract('hours', 24).format('YYYY-MM-DD HH:mm:ss') + ' - ' + moment().format('YYYY-MM-DD HH:mm:ss'));
+                    $('#timesrange').val(($('#reportrange span').html()));
+                    
+                    $('#reportrange').daterangepicker(
+                            {
+                                maxDate : moment(),
+                                dateLimit : {
+                                    days : 60
+                                },  
+                                showDropdowns : true,
+                                showWeekNumbers : false,  
+                                timePicker : true,  
+                                timePickerIncrement : 5,  
+                                timePicker12Hour : false,
+                                timePickerSeconds :true,  
+                                  ranges : {
+                  //'最近1小时': [moment().subtract('hours',1), moment()],
+                  '今日': [moment().startOf('day'), moment()],
+                  '昨日': [moment().subtract('days', 1).startOf('day'), moment().subtract('days', 1).endOf('day')],
+                  '最近7日': [moment().subtract('days', 6), moment()],
+                  '最近30日': [moment().subtract('days', 29), moment()]
+                },
+                                opens : 'right', // //日期选择框的弹出位置
+                                buttonClasses : [ 'btn btn-default' ],
+                                applyClass : 'btn-small btn-primary blue',
+                                cancelClass : 'btn-small',
+                                format : 'YYYY-MM-DD HH:mm:ss', // 控件中from和to 显示的日期格式
+                                separator : ' to ',
+                                locale : {
+                                          applyLabel : '确定',
+                                          cancelLabel : '取消',
+                                          fromLabel : '起始时间',
+                                          toLabel : '结束时间',
+                                          customRangeLabel : '自定义',
+                                          daysOfWeek : [ '日', '一', '二', '三', '四', '五', '六' ],
+                                          monthNames : [ '一月', '二月', '三月', '四月', '五月', '六月',
+                                            '七月', '八月', '九月', '十月', '十一月', '十二月' ],
+                                          firstDay : 1
+                                }
+                            }, function(start, end, label) {//格式化日期显示框                                
+                                $('#reportrange span').html(start.format('YYYY-MM-DD HH:mm:ss') + ' - ' + end.format('YYYY-MM-DD HH:mm:ss'));
+                                console.log(start.format('YYYY-MM-DD HH:mm:ss'))
+                                $('#timesrange').val(($('#reportrange span').html()));
+                           });
+         
+      // 设置日期菜单被选项  --开始--
+        var dateOption ;  
+        if("${riqi}"=='day') {  
+        dateOption = "今日";  
+        }else if("${riqi}"=='yday') {  
+        dateOption = "昨日";  
+        }else if("${riqi}"=='week'){  
+        dateOption ="最近7日";  
+        }else if("${riqi}"=='month'){  
+        dateOption ="最近30日";  
+        }else if("${riqi}"=='year'){  
+        dateOption ="最近一年";  
+        }else{  
+        dateOption = "自定义";  
+        }  
+        $(".daterangepicker").find("li").each(function (){  
+        if($(this).hasClass("active")){  
+        $(this).removeClass("active");  
+        }  
+        if(dateOption==$(this).html()){  
+        $(this).addClass("active");  
+
+        }  
+        }); 
+        });
+
+    </script>
+<script type="text/javascript">
+function ifnull() {
+  var t = document.getElementById("filter").value;
+  if (t != "all")
+  {
+    var y = document.getElementById("proto").value;
+    // console.log(y);
+    if (y.length==0)
+    {
+      alert("请输入内容!");
+    }
+    else
+    {
+      document.getElementById("myform").submit();
+    }
+  }
+  else {
+    document.getElementById("myform").submit();
+  }
+}
+</script>
+</head>
+<body>
+<br>
+<div class="container">
+    <h2 class="text-center">网络数据</h2>
+</div>
+<div>
+    <div class="container">
+       
+        <form class="navbar-form navbar-left" enctype="multipart/form-data" id = "myform" method="POST" action="{{url_for('network_data')}}">
+
+                   <h4>请选择时间段:</h4>
+            <div class="controls">
+                <div id="reportrange" class="pull-left dateRange" >
+               
+                <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                <span id="searchDateRange" name="searchDateRange"></span>          
+                         <b class="caret"></b>
+                         <input type="hidden" id="timesrange" name="field_name"  />
+                         
+                </div>
+                <select  class="form-control" name="filter_type" id="filter">&nbsp;&nbsp;
+                  <option value="all" selected>所&nbsp;&nbsp;&nbsp;&nbsp;有</option>
+                  <option value="ID">节点&nbsp;&nbsp;&nbsp;ID</option>
+                  <option value="parentID">父节点ID</option>
+              </select> 
+ 
+
+              <input style="width:100px"  class="form-control"  type="text" id="proto" name="value">
+           
+                <button type="button" class="btn btn-success" onclick="ifnull()">&nbsp;提&nbsp;&nbsp;&nbsp;交&nbsp;</button>
+ 
+            </div>
+            <br />
+<h4 align="center">当前选取时间为:{{time}}</h4>
+        　</form> 
+    </div>  
+</div>
+
+<!-- <div class="bs-example" data-example-id="hoverable-table"> -->
+    <table class="table table-hover table-responsive  table-condensed table-striped">
+      <thead>
+        <tr>
+            <th class="text-center">序号</th>
+            <th class="text-center">时间</th>
+            <th class="text-center">源节点</th>
+            <th class="text-center">父节点</th>
+            <th class="text-center">节点时间</th>
+            <th class="text-center">同步时间</th>
+            <th class="text-center">CT</th>
+            <th class="text-center">CTD</th>
+            <th class="text-center">电流</th>
+            <th class="text-center">CPU</th>
+            <th class="text-center">LPM</th>
+            <th class="text-center">TX</th>
+            <th class="text-center">RX</th>
+            <th class="text-center">电压</th>
+            <th class="text-left">邻居数</th>
+            <th class="text-left">重启标记</th>
+            <th class="text-left">信标间隔</th>
+            <th class="text-left">RTX</th>
+        </tr>
+      </thead>
+      <tbody>
+
+
+      {% for i in range(length): %}
+
+      <tr data-toggle="modal" data-target="#myModal">
+      <th scope="row" class="text-center" id="id">{{i+1}}</th>
+          <td class="text-nowrap text-center">{{ pcaps[i][16] }}</td>
+          <td class="text-center text-nowrap">{{ pcaps[i][1] }}</td>
+          <td class="text-left text-nowrap">{{ pcaps[i][2] }}</td>
+          <td class="text-center">{{ pcaps[i][15] }}</td>
+          {% if pcaps[i][8] < -7 or pcaps[i][8] > 7 %}
+          <td class="text-center" id="syntime" style="color:Red">{{ pcaps[i][8] }}</td>
+          {% else %}
+          <td class="text-center" >{{ pcaps[i][8] }}</td>
+          {% endif %}
+          <td class="text-center">{{ pcaps[i][13] }}</td>
+          <td class="text-center">{{ pcaps[i][14] }}</td>
+          {% if pcaps[i][17]  > 40 %}
+          <td class="text-center" id="current" style="color:Red">{{ pcaps[i][17] }}</td>
+          {% else %}
+          <td class="text-center" id="current">{{ pcaps[i][17] }}</td>
+          {% endif %}
+          <td class="text-center" id="tdcpu">{{ pcaps[i][3] }}</td>
+          <td class="text-center" id="tdlpm">{{ pcaps[i][4] }}</td>
+          <td class="text-center" id="tdtx">{{ pcaps[i][6] }}</td>
+          <td class="text-center" id="tdrx">{{ pcaps[i][5] }}</td>
+          {% if pcaps[i][7]  < 3 %}
+          <td class="text-center text-nowrap" id="voltage" style="color:Red">{{ pcaps[i][7] }}</td>
+          {% else %}
+          <td class="text-center text-nowrap" id="voltage">{{ pcaps[i][7] }}</td>
+          {% endif %}
+          <td class="text-left text-nowrap">{{ pcaps[i][10] }}</td>
+          <td class="text-left text-nowrap">{{ pcaps[i][12] }}</td>
+          <td class="text-left text-nowrap">{{ pcaps[i][9] }}</td>
+          <td class="text-left text-nowrap">{{ pcaps[i][11] }}</td>
+        </tr>
+
+      {% endfor %}
+      </tbody>
+    </table>
+
+<!-- <script type="text/javascript">
+    (function(){
+        var len = $('table tr').length;
+        for(var i = 1;i<len;i++){
+            $('table tr:eq('+i+') th:first').text(i);
+        }
+            
+}); 
+</script> -->
+
+</body>
+</html>

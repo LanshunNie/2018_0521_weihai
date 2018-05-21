@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>数据上传</title>
+
+<link href="../../static/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../static/bootstrap-3.3.5/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+
+<script src="../../static/bootstrap-3.3.5/js/jquery-1.11.3.min.js" type="text/javascript"></script>
+<script src="../../static/bootstrap-3.3.5/js/bootstrap.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">  
+  $(function(){
+        $("td").click(
+            function(){
+          var inval = $(this).html();  
+           if (inval.substr(1, 5) != 'input') {
+           var inid =  $(this).parents().attr("");
+          //document.write(inid);
+           $(this).html("<input id="+inid+" value="+inval+"> ");
+           //被击的格，变成输入框，并给该框斌值和id
+           var sid="#"+inid;
+ 
+           var idattr=$(this).attr("");
+           
+              $(sid).focus().on("blur",
+              function()
+             { 
+//在输入框中，取得焦点后，再失去焦点后,取得当前框的值,把当前框的值传给当前元素的上一层元素
+                 var editval = $(this).val();
+                
+                 $(this).parents("td").html(editval);
+
+                 var id =document.getElementById('id').innerHTML;
+                 var HeartIntSec =document.getElementById('HeartIntSec').innerHTML;
+                 var AckHeartInt =document.getElementById('AckHeartInt').innerHTML;
+                 var rootAddr =document.getElementById('rootAddr').innerHTML;
+                 var ftpuser =document.getElementById('ftpuser').innerHTML;
+                 var ftphost =document.getElementById('ftphost').innerHTML;
+                 var ftpPwd =document.getElementById('ftpPwd').innerHTML;
+                 var ftpPort =document.getElementById('ftpPort').innerHTML;
+                 var serverIp =document.getElementById('serverIp').innerHTML;
+
+$.post("{{url_for('upload_modify')}}", {id:id,HeartIntSec:HeartIntSec,AckHeartInt:AckHeartInt,rootAddr:rootAddr,ftpuser:ftpuser,ftphost:ftphost,ftpPwd:ftpPwd,ftpPort:ftpPort,serverIp:serverIp},
+
+    function(data){   
+        console.log(data);
+    }
+);       
+
+              }
+         );
+       }   
+  });  
+         });
+ 
+
+</script>
+</head>
+
+<!-- <body onload="setToEditable('editable')"> -->
+<body>
+<div class="container">
+    <br>
+    <div class="jumbotron">
+        <div class="container">
+            <div style="width: 50%;float:left;">
+            <h1>欢迎使用本系统</h1>
+            <br>
+            <p>无线网络控制系统</p>
+            </div>
+            <div id="main" style="height:250px;width:50%;float:left;"></div>
+        </div>
+    </div>
+    <br>
+
+
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <!-- ECharts单文件引入 -->
+    <script src="../../static/echarts-2.27/build/dist/echarts.js"></script>
+    <script type="text/javascript">
+        // 路径配置
+        require.config({
+            paths: {
+                echarts: '../../static/echarts-2.27/build/dist'
+            }
+        });
+
+        // 使用
+        require(
+            [
+                'echarts',
+                'echarts/chart/wordCloud' // 使用柱状图就加载bar模块，按需加载
+            ],
+            function (ec) {
+                // 基于准备好的dom，初始化echarts图表
+                var myChart = ec.init(document.getElementById('main'));
+
+            function createRandomItemStyle() {
+                return {
+                    normal: {
+                        color: 'rgb(' + [
+                            Math.round(Math.random() * 160),
+                            Math.round(Math.random() * 160),
+                            Math.round(Math.random() * 160)
+                        ].join(',') + ')'
+                    }
+                };
+            }
+
+            // var option = {
+            //     tooltip: {
+            //         show: false
+            //     },
+            //     series: [{
+            //         name: 'Protocal',
+            //         type: 'wordCloud',
+            //         size: ['100%', '100%'],
+            //         textRotation : [0, 45, 90, -45],
+            //         textPadding: 0,
+            //         autoSize: {
+            //             enable: true,
+            //             minSize: 14
+            //         },
+            //         data: [
+                        // {
+                        //     name: "434M",
+                        //     value: 6181,
+                        //     itemStyle: createRandomItemStyle()
+                        // },
+                        // {
+                        //     name: "MESH",
+                        //     value: 965,
+                        //     itemStyle: createRandomItemStyle()
+                        // },
+                        // {
+                        //     name: "完全自组网",
+                        //     value: 6181,
+                        //     itemStyle: createRandomItemStyle()
+                        // },
+                        // {
+                        //     name: "100kbps",
+                        //     value: 4386,
+                        //     itemStyle: createRandomItemStyle()
+                        // },
+                        // {
+                        //     name: "威海天罡",
+                        //     value: 4055,
+                        //     itemStyle: createRandomItemStyle()
+                        // },
+                        // {
+                        //     name: "低功耗",
+                        //     value: 2467,
+                        //     itemStyle: createRandomItemStyle()
+                        // },
+                        // {
+                        //     name: "哈工大",
+                        //     value: 1898,
+                        //     itemStyle: createRandomItemStyle()
+                        // },
+                        // {
+                        //     name: "无线",
+                        //     value: 1484,
+                        //     itemStyle: createRandomItemStyle()
+                        // },
+                        // {
+                        //     name: "AMR",
+                        //     value: 1112,
+                        //     itemStyle: createRandomItemStyle()
+                        // },
+                        // {
+                        //     name: "IPv6",
+                        //     value: 965,
+                        //     itemStyle: createRandomItemStyle()
+                        // },
+                        // {
+                        //     name: "ORPL",
+                        //     value: 847,
+                        //     itemStyle: createRandomItemStyle()
+                        // },
+                        // {
+                        //     name: "20uA",
+                        //     value: 582,
+                        //     itemStyle: createRandomItemStyle()
+                        // },
+                        // {
+                        //     name: "电池供电",
+                        //     value: 555,
+                        //     itemStyle: createRandomItemStyle()
+                        // },
+                        // {
+                        //     name: "长周期",
+                        //     value: 550,
+                        //     itemStyle: createRandomItemStyle()
+                        // },
+                        // {
+                        //     name: "水　电　气　热",
+                        //     value: 462,
+                        //     itemStyle: createRandomItemStyle()
+                        // },
+                        // {
+                        //     name: "OSPF",
+                        //     value: 366,
+                        //     itemStyle: createRandomItemStyle()
+                        // },
+                        // {
+                        //     name: "可靠",
+                        //     value: 360,
+                        //     itemStyle: createRandomItemStyle()
+                        // },
+                        // {
+                        //     name: "稳定",
+                        //     value: 282,
+                        //     itemStyle: createRandomItemStyle()
+                        // },
+                        // {
+                        //     name: "RIP",
+                        //     value: 273,
+                        //     itemStyle: createRandomItemStyle()
+                        // }
+                //     ]
+                // }]
+            };
+                // 为echarts对象加载数据
+                myChart.setOption(option);
+            }
+        );
+    </script>
+    <div class="container">
+    <h2>系统信息及初始化配置:</h2>
+        <table class="table table-hover table-responsive  table-condensed table-striped" align="center">
+            <tbody> 
+                <tr>       
+                    <th width="30%"> id </th>
+                    <th width="30%"> 集中器编号 </th>
+                    <td width="40%" id="id">{{json_dict['id']}}</td>
+                </tr>
+                <tr>       
+                    <th width="30%"> HeartIntSec </th>
+                    <th width="30%"> 心跳间隔 </th>
+                    <td width="40%" id="HeartIntSec">{{json_dict['HeartIntSec']}}</td>
+                </tr>
+                <tr>         
+                    <th width="30%">AckHeartInt</th>
+                    <th width="30%">ACK心跳间隔</th>
+                    <td width="40%" id="AckHeartInt">{{json_dict['AckHeartInt']}}</td>
+                </tr>
+                <tr>         
+                    <th width="30%">rootAddr</th>
+                    <th width="30%">根IP地址</th>
+                    <td width="40%" id="rootAddr">{{json_dict['rootAddr']}}</td>
+                </tr>
+                <tr>         
+                    <th width="30%">ftpuser</th>
+                    <th width="30%">ftp用户名</th>
+                    <td width="40%" id="ftpuser">{{json_dict['ftpuser']}}</td>
+                </tr>
+                <tr>         
+                    <th width="30%">ftphost</th>
+                    <th width="30%">ftp主机IP</th>
+                    <td width="40%" id="ftphost">{{json_dict['ftphost']}}</td>
+                </tr>
+                <tr>         
+                    <th width="30%">ftpPwd</th>
+                    <th width="30%">ftp密码</th>
+                    <td width="40%" id="ftpPwd">{{json_dict['ftpPwd']}}</td>
+                </tr>
+                <tr>         
+                    <th width="30%">ftpPort</th>
+                    <th width="30%">ftp端口</th>
+                    <td width="40%" id="ftpPort">{{json_dict['ftpPort']}}</td>
+                </tr>
+                <tr>         
+                    <th width="30%">serverIp</th>
+                    <th width="30%">后台服务器IP</th>
+                    <td width="40%" id="serverIp">{{json_dict['serverIp']}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>  
+
+            <br>
+
+</body>
+</html>

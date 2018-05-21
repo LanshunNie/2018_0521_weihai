@@ -1,0 +1,365 @@
+********SLIP started on ``/dev/ttyS4''
+opened tun device ``/dev/tun0''
+tunslip6: serial_to_tun: read: Success
+********SLIP started on ``/dev/ttyS4''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS4''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS4''
+opened tun device ``/dev/tun0''
+tunslip6: serial_to_tun: read: Success
+********SLIP started on ``/dev/ttyS4''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS4''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS4''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS4''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS4''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS4''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS4''
+opened tun device ``/dev/tun0''
+********SLIP started on ``/dev/ttyS4''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS4''
+opened tun device ``/dev/tun0''
+********SLIP started on ``/dev/ttyS4''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS4''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS4''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS4''
+opened tun device ``/dev/tun0''
+********SLIP started on ``/dev/ttyS4''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS4''
+opened tun device ``/dev/tun0''
+********SLIP started on ``/dev/ttyS4''
+opened tun device ``/dev/tun0''
+********SLIP started on ``/dev/ttyS4''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS4''
+opened tun device ``/dev/tun0''
+********SLIP started on ``/dev/ttyS4''
+opened tun device ``/dev/tun0''
+tunslip6: serial_to_tun: read: Success
+********SLIP started on ``/dev/ttyS4''
+opened tun device ``/dev/tun0''
+tunslip6: serial_to_tun: read: Success
+********SLIP started on ``/dev/ttyS4''
+opened tun device ``/dev/tun0''
+tunslip6: serial_to_tun: read: Success
+********SLIP started on ``/dev/ttyS4''
+opened tun device ``/dev/tun0''
+tunslip6: serial_to_tun: write: Invalid argument
+********SLIP started on ``/dev/ttyS4''
+opened tun device ``/dev/tun0''
+tunslip6: serial_to_tun: write: Invalid argument
+********SLIP started on ``/dev/ttyS4''
+opened tun device ``/dev/tun0''
+********SLIP started on ``/dev/ttyS4''
+opened tun device ``/dev/tun0''
+********SLIP started on ``/dev/ttyS4''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+*** Address:aaaa::2 => aaaa:0000:0000:0000
+*** Address:aaaa::2 => aaaa:0000:0000:0000
+*** Address:aaaa::2 => aaaa:0000:0000:0000
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+tunslip6: serial_to_tun: write: Invalid argument
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+tunslip6: serial_to_tun: write: Invalid argument
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+tunslip6: serial_to_tun: write: Invalid argument
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+*** Address:aaaa::2 => aaaa:0000:0000:0000
+*** Address:aaaa::2 => aaaa:0000:0000:0000
+tunslip6: serial_to_tun: write: Invalid argument
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+tunslip6: serial_to_tun: write: Invalid argument
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+tunslip6: serial_to_tun: write: Invalid argument
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+*** Address:aaaa::2 => aaaa:0000:0000:0000
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+tunslip6: serial_to_tun: write: Invalid argument
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+*** Address:aaaa::2 => aaaa:0000:0000:0000
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+*** Address:aaaa::2 => aaaa:0000:0000:0000
+tunslip6: serial_to_tun: write: Invalid argument
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+tunslip6: serial_to_tun: write: Invalid argument
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+tunslip6: serial_to_tun: write: Invalid argument
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+tunslip6: serial_to_tun: write: Invalid argument
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+tunslip6: serial_to_tun: write: Invalid argument
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+tunslip6: serial_to_tun: write: Invalid argument
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+*** Address:aaaa::2 => aaaa:0000:0000:0000
+tunslip6: serial_to_tun: write: Invalid argument
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+*** dropping large 2000 byte packet
+tunslip6: serial_to_tun: write: Invalid argument
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+*** dropping large 2000 byte packet
+tunslip6: serial_to_tun: write: Invalid argument
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+*** dropping large 2000 byte packet
+tunslip6: serial_to_tun: write: Invalid argument
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+********SLIP started on ``/dev/ttyS4''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS4''
+opened tun device ``/dev/tun0''
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+tunslip6: serial_to_tun: write: Invalid argument
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+*** dropping large 2000 byte packet
+tunslip6: serial_to_tun: write: Invalid argument
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+tunslip6: serial_to_tun: write: Invalid argument
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+*** Address:aaaa::2 => aaaa:0000:0000:0000
+*** Address:aaaa::2 => aaaa:0000:0000:0000
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+*** Address:aaaa::2 => aaaa:0000:0000:0000
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+********SLIP started on ``/dev/ttyS4''
+can not tunsetiff to tun0 (flags=00001001): Device or resource busy
+tunslip6: main: open /dev/tun: Device or resource busy
+********SLIP started on ``/dev/ttyS4''
+can not tunsetiff to tun0 (flags=00001001): Device or resource busy
+tunslip6: main: open /dev/tun: Device or resource busy
+********SLIP started on ``/dev/ttyS4''
+can not tunsetiff to tun0 (flags=00001001): Device or resource busy
+tunslip6: main: open /dev/tun: Device or resource busy
+********SLIP started on ``/dev/ttyS4''
+can not tunsetiff to tun0 (flags=00001001): Device or resource busy
+tunslip6: main: open /dev/tun: Device or resource busy
+********SLIP started on ``/dev/ttyS4''
+can not tunsetiff to tun0 (flags=00001001): Device or resource busy
+tunslip6: main: open /dev/tun: Device or resource busy
+********SLIP started on ``/dev/ttyS4''
+can not tunsetiff to tun0 (flags=00001001): Device or resource busy
+tunslip6: main: open /dev/tun: Device or resource busy
+********SLIP started on ``/dev/ttyS4''
+can not tunsetiff to tun0 (flags=00001001): Device or resource busy
+tunslip6: main: open /dev/tun: Device or resource busy
+********SLIP started on ``/dev/ttyS4''
+can not tunsetiff to tun0 (flags=00001001): Device or resource busy
+tunslip6: main: open /dev/tun: Device or resource busy
+********SLIP started on ``/dev/ttyS4''
+can not tunsetiff to tun0 (flags=00001001): Device or resource busy
+tunslip6: main: open /dev/tun: Device or resource busy
+********SLIP started on ``/dev/ttyS4''
+can not tunsetiff to tun0 (flags=00001001): Device or resource busy
+tunslip6: main: open /dev/tun: Device or resource busy
+********SLIP started on ``/dev/ttyS4''
+can not tunsetiff to tun0 (flags=00001001): Device or resource busy
+tunslip6: main: open /dev/tun: Device or resource busy
+********SLIP started on ``/dev/ttyS4''
+can not tunsetiff to tun0 (flags=00001001): Device or resource busy
+tunslip6: main: open /dev/tun: Device or resource busy
+********SLIP started on ``/dev/ttyS4''
+can not tunsetiff to tun0 (flags=00001001): Device or resource busy
+tunslip6: main: open /dev/tun: Device or resource busy
+********SLIP started on ``/dev/ttyS4''
+can not tunsetiff to tun0 (flags=00001001): Device or resource busy
+tunslip6: main: open /dev/tun: Device or resource busy
+********SLIP started on ``/dev/ttyS4''
+can not tunsetiff to tun0 (flags=00001001): Device or resource busy
+tunslip6: main: open /dev/tun: Device or resource busy
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+*** Address:aaaa::2 => aaaa:0000:0000:0000
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+*** Address:aaaa::2 => aaaa:0000:0000:0000
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+*** Address:aaaa::2 => aaaa:0000:0000:0000
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+signal 15
+********SLIP started on ``/dev/ttyS1''
+opened tun device ``/dev/tun0''
+*** Address:aaaa::2 => aaaa:0000:0000:0000
+*** Address:aaaa::2 => aaaa:0000:0000:0000
+*** Address:aaaa::2 => aaaa:0000:0000:0000
